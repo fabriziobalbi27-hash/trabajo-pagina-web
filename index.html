@@ -13,7 +13,8 @@
     <a class="logo" href="index.html">FindA<span class="span">Gem</span></a>
     <nav class="navegacion">
       <ul class="navegacion_lista">
-        <li class="navegacion_item"><a class="navegacion_enlace" href="index.html">Inicio</a></li>
+        <li class="navegacion_item"><a class="navegacion_enlace navegacion_enlace_activo" href="index.html">Inicio</a>
+        </li>
         <li class="navegacion_item"><a class="navegacion_enlace" href="pages/sobre-mi.html">Sobre mí</a></li>
         <li class="navegacion_item"><a class="navegacion_enlace" href="pages/proyectos.html">Proyectos</a></li>
         <li class="navegacion_item"><a class="navegacion_enlace" href="pages/servicios.html">Servicios</a></li>
@@ -23,7 +24,7 @@
   </header>
 
   <main class="contenido">
-    <section class="seccion">
+    <section class="seccion seccion_principal">
       <h1 class="titulo_principal">Piezas vintage para instrumentos con historia</h1>
       <p class="texto">
         Encontrá repuestos seleccionados, asesoramiento y servicios pensados
@@ -49,7 +50,7 @@
             alt="Pickguard tortoise prearmado con tres micrófonos single coil" />
           <h3 class="tarjeta_titulo">Pickguard Fire '57</h3>
           <p class="tarjeta_texto">Pickguard prearmado, listo para instalar y probar.</p>
-          <p class="tarjeta_texto"><strong>USD 150</strong></p>
+          <p class="tarjeta_texto tarjeta_precio"><strong>USD 150</strong></p>
         </article>
 
         <article class="tarjeta">
@@ -57,7 +58,7 @@
             alt="Micrófono humbucker Gibson Select en su estuche" />
           <h3 class="tarjeta_titulo">Humbucker Gibson Select</h3>
           <p class="tarjeta_texto">Micrófono de reemplazo con sonido cálido y definido.</p>
-          <p class="tarjeta_texto"><strong>USD 120</strong></p>
+          <p class="tarjeta_texto tarjeta_precio"><strong>USD 120</strong></p>
         </article>
 
         <article class="tarjeta">
@@ -65,7 +66,7 @@
             alt="Juego de seis clavijas Fender estilo vintage" />
           <h3 class="tarjeta_titulo">Clavijas Fender vintage</h3>
           <p class="tarjeta_texto">Juego de seis clavijas para restauraciones de estilo clásico.</p>
-          <p class="tarjeta_texto"><strong>USD 85</strong></p>
+          <p class="tarjeta_texto tarjeta_precio"><strong>USD 85</strong></p>
         </article>
       </div>
     </section>
@@ -81,8 +82,7 @@
 
     <section class="seccion">
       <h2 class="titulo_secundario">Experiencias de clientes</h2>
-
-      <div class="contenedor_tarjetas">
+      <div class="contenedor_tarjetas contenedor_clientes">
         <article class="tarjeta">
           <img class="imagen imagen_tarjeta" src="img/cliente-repuestos-trastes.webp"
             alt="Detalle de los nuevos trastes instalados en una guitarra eléctrica" />
@@ -132,8 +132,10 @@
       </ul>
     </section>
 
-    <p>&copy; 2026 FindAGem. Todos los derechos reservados.</p>
-    <p>Córdoba, Argentina - Atención con cita previa</p>
+    <div class="pie_legal">
+      <p>&copy; 2026 FindAGem. Todos los derechos reservados.</p>
+      <p>Córdoba, Argentina - Atención con cita previa</p>
+    </div>
   </footer>
 </body>
 
