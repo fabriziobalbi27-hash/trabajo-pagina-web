@@ -38,11 +38,6 @@ ENCABEZADO Y NAVEGACION
 
 .encabezado {
     background-color: #416788;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
     padding: 1.25rem 2.5rem;
 }
 
@@ -54,32 +49,66 @@ ENCABEZADO Y NAVEGACION
     align-self: center;
 }
 
-.navegacion_lista {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+/* Navbar de Bootstrap con la paleta propia */
+.encabezado .navbar {
+    --bs-navbar-padding-y: 0;
+    --bs-navbar-color: #F0EDE2;
+    --bs-navbar-hover-color: #FFDAB9;
+    --bs-navbar-active-color: #FFDAB9;
+    --bs-navbar-brand-color: #F0EDE2;
+    --bs-navbar-brand-hover-color: #F0EDE2;
+    --bs-navbar-nav-link-padding-x: 0;
+    --bs-navbar-toggler-border-color: rgba(240, 237, 226, 0.5);
+    --bs-navbar-toggler-border-radius: 0.5rem;
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F0EDE2' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-.navegacion_enlace {
-    color: #F0EDE2;
-    font-size: 1rem;
+.encabezado .container-fluid {
+    padding-inline: 0;
+}
+
+.encabezado .navbar-nav {
+    column-gap: 1.5rem;
+}
+
+.encabezado .nav-link {
+    position: relative;
+    display: inline-block;
     font-weight: 600;
-    text-decoration: none;
     padding: 0.5rem 0;
-    border-bottom: 0.15rem solid transparent;
-    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
-.navegacion_enlace:hover {
-    color: #FFDAB9;
+/* Raya debajo del link: crece al pasar el mouse y queda fija en la página actual */
+.encabezado .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.35rem;
+    height: 0.125rem;
+    border-radius: 1rem;
+    background-color: #FFDAB9;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
 }
 
-.navegacion_enlace_activo {
-    color: #FFDAB9;
-    border-bottom-color: #FFDAB9;
+.encabezado .nav-link:hover::after,
+.encabezado .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.encabezado .navbar-toggler {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.encabezado .navbar-toggler:hover {
+    border-color: #FFDAB9;
+}
+
+.encabezado .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 218, 185, 0.5);
 }
 
 /*
@@ -380,19 +409,7 @@ CONTENIDO PRINCIPAL Y JERARQUIA
 @media (max-width: 767px) {
 
     .encabezado {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         padding: 1.25rem;
-    }
-
-    .navegacion {
-        width: 100%;
-    }
-
-    .navegacion_lista {
-        justify-content: center;
-        gap: 0.75rem 1.25rem;
     }
 
     .contenido {
@@ -449,19 +466,6 @@ CONTENIDO PRINCIPAL Y JERARQUIA
 
 /* Tablet: de 768px a 1023px */
 @media (min-width: 768px) and (max-width:1023px) {
-    .encabezado {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .navegacion {
-        width: 100%;
-    }
-
-    .navegacion_lista {
-        justify-content: center;
-    }
 
     .contenedor_clientes {
         grid-template-columns: 1fr 1fr;
