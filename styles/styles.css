@@ -32,6 +32,29 @@ body {
     line-height: 1.6;
 }
 
+/* Texto seleccionado con la paleta propia */
+::selection {
+    background-color: #FFDAB9;
+    color: #416788;
+}
+
+/*
+Foco visible al navegar con teclado (Tab).
+Sobre fondos claros usa el azul primario; en el encabezado y el pie,
+que tienen fondo azul, pasa al durazno para mantener el contraste.
+*/
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #416788;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.encabezado a:focus-visible,
+.pie_pagina a:focus-visible {
+    outline: 2px solid #FFDAB9;
+}
+
 /*
 ENCABEZADO Y NAVEGACION
 */
@@ -47,6 +70,7 @@ ENCABEZADO Y NAVEGACION
     font-weight: 800;
     text-decoration: none;
     align-self: center;
+    transition: opacity 0.1s ease;
 }
 
 /* Navbar de Bootstrap con la paleta propia */
@@ -76,7 +100,7 @@ ENCABEZADO Y NAVEGACION
     display: inline-block;
     font-weight: 600;
     padding: 0.5rem 0;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, opacity 0.1s ease;
 }
 
 /* Raya debajo del link: crece al pasar el mouse y queda fija en la página actual */
@@ -95,20 +119,40 @@ ENCABEZADO Y NAVEGACION
 }
 
 .encabezado .nav-link:hover::after,
+.encabezado .nav-link:focus-visible::after,
 .encabezado .nav-link.active::after {
     transform: scaleX(1);
 }
 
+/* Bootstrap marca el foco con una sombra azul: se reemplaza por el contorno propio */
+.encabezado .nav-link:focus-visible {
+    box-shadow: none;
+}
+
+.encabezado .nav-link:active,
+.encabezado .navbar-brand:active {
+    opacity: 0.7;
+}
+
 .encabezado .navbar-toggler {
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
 }
 
 .encabezado .navbar-toggler:hover {
     border-color: #FFDAB9;
 }
 
+/* Bootstrap muestra el anillo de foco también al hacer clic: se deja solo para teclado */
 .encabezado .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.encabezado .navbar-toggler:focus-visible {
     box-shadow: 0 0 0 0.2rem rgba(255, 218, 185, 0.5);
+}
+
+.encabezado .navbar-toggler:active {
+    transform: scale(0.95);
 }
 
 /*
@@ -398,11 +442,15 @@ CONTENIDO PRINCIPAL Y JERARQUIA
     color: #F0EDE2;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, opacity 0.1s ease;
 }
 
 .pie_enlace:hover {
     color: #FFDAB9;
+}
+
+.pie_enlace:active {
+    opacity: 0.7;
 }
 
 /* Celulares: hasta 767px */
@@ -498,5 +546,21 @@ CONTENIDO PRINCIPAL Y JERARQUIA
     .proyecto {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "imagen info";
+    }
+}
+
+/*
+ACCESIBILIDAD: MOVIMIENTO REDUCIDO
+Si la persona configuró su sistema para reducir animaciones,
+las transiciones pasan a ser instantáneas.
+*/
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }
