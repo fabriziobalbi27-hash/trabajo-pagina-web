@@ -86,21 +86,51 @@
     <section class="seccion">
       <h2 class="titulo_secundario">Cómo trabajamos</h2>
 
-      <div class="contenedor_tarjetas">
-        <article class="tarjeta">
-          <h3 class="tarjeta_titulo">1. Consulta</h3>
-          <p class="tarjeta_texto">Nos contás qué instrumento tenés y qué necesitás resolver.</p>
-        </article>
+      <div class="accordion acordeon_pasos" id="acordeonpasos">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pasoconsulta"
+              aria-expanded="true" aria-controls="pasoconsulta">
+              1. Consulta
+            </button>
+          </h3>
+          <div id="pasoconsulta" class="accordion-collapse collapse show" data-bs-parent="#acordeonpasos">
+            <div class="accordion-body">
+              Nos contás qué instrumento tenés y qué necesitás resolver. Con las fotos y el
+              número de serie ya podemos orientarte sin que muevas el instrumento del taller.
+            </div>
+          </div>
+        </div>
 
-        <article class="tarjeta">
-          <h3 class="tarjeta_titulo">2. Evaluación</h3>
-          <p class="tarjeta_texto">Revisamos el caso y definimos las opciones disponibles.</p>
-        </article>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#pasoevaluacion" aria-expanded="false" aria-controls="pasoevaluacion">
+              2. Evaluación
+            </button>
+          </h3>
+          <div id="pasoevaluacion" class="accordion-collapse collapse" data-bs-parent="#acordeonpasos">
+            <div class="accordion-body">
+              Revisamos el caso y definimos las opciones disponibles. Si hace falta una pieza
+              difícil de conseguir, buscamos alternativas compatibles antes de darte un plazo.
+            </div>
+          </div>
+        </div>
 
-        <article class="tarjeta">
-          <h3 class="tarjeta_titulo">3. Propuesta</h3>
-          <p class="tarjeta_texto">Te explicamos el trabajo, los tiempos y el costo estimado.</p>
-        </article>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#pasopropuesta" aria-expanded="false" aria-controls="pasopropuesta">
+              3. Propuesta
+            </button>
+          </h3>
+          <div id="pasopropuesta" class="accordion-collapse collapse" data-bs-parent="#acordeonpasos">
+            <div class="accordion-body">
+              Te explicamos el trabajo, los tiempos y el costo estimado. Recién con tu
+              confirmación empezamos, y te avisamos si aparece algo no previsto.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>

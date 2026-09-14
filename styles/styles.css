@@ -32,17 +32,11 @@ body {
     line-height: 1.6;
 }
 
-/* Texto seleccionado con la paleta propia */
 ::selection {
     background-color: #FFDAB9;
     color: #416788;
 }
 
-/*
-Foco visible al navegar con teclado (Tab).
-Sobre fondos claros usa el azul primario; en el encabezado y el pie,
-que tienen fondo azul, pasa al durazno para mantener el contraste.
-*/
 a:focus-visible,
 button:focus-visible {
     outline: 2px solid #416788;
@@ -73,7 +67,6 @@ ENCABEZADO Y NAVEGACION
     transition: opacity 0.1s ease;
 }
 
-/* Navbar de Bootstrap con la paleta propia */
 .encabezado .navbar {
     --bs-navbar-padding-y: 0;
     --bs-navbar-color: #F0EDE2;
@@ -103,7 +96,6 @@ ENCABEZADO Y NAVEGACION
     transition: color 0.2s ease, opacity 0.1s ease;
 }
 
-/* Raya debajo del link: crece al pasar el mouse y queda fija en la página actual */
 .encabezado .nav-link::after {
     content: "";
     position: absolute;
@@ -124,7 +116,6 @@ ENCABEZADO Y NAVEGACION
     transform: scaleX(1);
 }
 
-/* Bootstrap marca el foco con una sombra azul: se reemplaza por el contorno propio */
 .encabezado .nav-link:focus-visible {
     box-shadow: none;
 }
@@ -142,7 +133,6 @@ ENCABEZADO Y NAVEGACION
     border-color: #FFDAB9;
 }
 
-/* Bootstrap muestra el anillo de foco también al hacer clic: se deja solo para teclado */
 .encabezado .navbar-toggler:focus {
     box-shadow: none;
 }
@@ -398,6 +388,265 @@ CONTENIDO PRINCIPAL Y JERARQUIA
     gap: 1rem;
 }
 
+/* GALERIA */
+
+.galeria_carousel {
+    background-color: #F0EDE2;
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+}
+
+.galeria_imagen {
+    display: block;
+    max-width: 20rem;
+    margin-inline: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    box-shadow: 0 0.75rem 1.5rem rgba(65, 103, 136, 0.2);
+}
+
+.galeria_etiqueta {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.875rem;
+    border-radius: 2rem;
+    background-color: #FFDAB9;
+    color: #416788;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.galeria_titulo {
+    margin-bottom: 1rem;
+    color: #416788;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.galeria_carousel .texto {
+    max-width: 32rem;
+    margin-bottom: 0;
+}
+
+.galeria_controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.galeria_controles .carousel-control-prev,
+.galeria_controles .carousel-control-next,
+.galeria_controles .carousel-indicators {
+    position: static;
+}
+
+.galeria_controles .carousel-control-prev,
+.galeria_controles .carousel-control-next {
+    flex-shrink: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background-color: #416788;
+    opacity: 1;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.galeria_controles .carousel-control-prev-icon,
+.galeria_controles .carousel-control-next-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.galeria_controles .carousel-control-prev:hover,
+.galeria_controles .carousel-control-next:hover {
+    background-color: #2F4D66;
+}
+
+.galeria_controles .carousel-control-prev:focus-visible,
+.galeria_controles .carousel-control-next:focus-visible {
+    outline: 2px solid #416788;
+    outline-offset: 3px;
+}
+
+.galeria_controles .carousel-control-prev:active,
+.galeria_controles .carousel-control-next:active {
+    transform: scale(0.92);
+}
+
+.galeria_controles .carousel-indicators {
+    margin: 0;
+}
+
+.galeria_controles .carousel-indicators [data-bs-target] {
+    position: relative;
+    width: 1.5rem;
+    height: 2.75rem;
+    margin-inline: 0.125rem;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    opacity: 1;
+    transition: transform 0.1s ease;
+}
+
+.galeria_controles .carousel-indicators [data-bs-target]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 0.2rem;
+    border-radius: 1rem;
+    background-color: #416788;
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.galeria_controles .carousel-indicators [data-bs-target]:hover::before,
+.galeria_controles .carousel-indicators [data-bs-target]:focus-visible::before {
+    opacity: 0.6;
+}
+
+.galeria_controles .carousel-indicators [data-bs-target]:active {
+    transform: scale(0.92);
+}
+
+.galeria_controles .carousel-indicators .active::before {
+    width: 1.5rem;
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    .galeria_controles {
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 992px) {
+    .galeria_controles_fila {
+        position: absolute;
+        right: 2.5rem;
+        bottom: 2.5rem;
+        left: 2.5rem;
+    }
+
+    .galeria_controles {
+        margin-top: 0;
+    }
+
+    .galeria_texto {
+        padding-bottom: 4rem;
+    }
+}
+
+/* BOTONES Y MODAL */
+
+.boton_principal,
+.boton_secundario {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #416788;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.boton_principal {
+    background-color: #416788;
+    color: #F0EDE2;
+}
+
+.boton_principal:hover {
+    background-color: #2F4D66;
+    border-color: #2F4D66;
+    color: #F0EDE2;
+}
+
+.boton_secundario {
+    background-color: transparent;
+    color: #416788;
+}
+
+.boton_secundario:hover {
+    background-color: #416788;
+    color: #F0EDE2;
+}
+
+.boton_principal:focus-visible,
+.boton_secundario:focus-visible {
+    box-shadow: none;
+}
+
+.boton_principal:active,
+.boton_secundario:active {
+    transform: scale(0.96);
+}
+
+.modal_servicios .modal-content {
+    border: 0;
+    border-radius: 0.75rem;
+    background-color: #F0EDE2;
+}
+
+.modal_servicios .modal-header,
+.modal_servicios .modal-footer {
+    border-color: rgba(65, 103, 136, 0.2);
+}
+
+.modal_servicios .modal-title {
+    margin: 0;
+    color: #416788;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.lista_pasos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.lista_pasos li::marker {
+    color: #416788;
+    font-weight: 700;
+}
+
+/* ACORDEON */
+
+.acordeon_pasos {
+    --bs-accordion-color: #416788;
+    --bs-accordion-bg: #F0EDE2;
+    --bs-accordion-border-color: rgba(65, 103, 136, 0.2);
+    --bs-accordion-border-radius: 0.5rem;
+    --bs-accordion-btn-color: #416788;
+    --bs-accordion-btn-bg: #F0EDE2;
+    --bs-accordion-active-color: #416788;
+    --bs-accordion-active-bg: #FFDAB9;
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23416788'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23416788'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.acordeon_pasos .accordion-button {
+    font-weight: 700;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.acordeon_pasos .accordion-button:hover {
+    background-color: #FFDAB9;
+}
+
+.acordeon_pasos .accordion-button:active {
+    opacity: 0.8;
+}
+
 /* FOOTER */
 
 .pie_pagina {
@@ -458,6 +707,23 @@ CONTENIDO PRINCIPAL Y JERARQUIA
 
     .encabezado {
         padding: 1.25rem;
+    }
+
+    .galeria_carousel {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .galeria_imagen {
+        max-width: 16rem;
+    }
+
+    .galeria_titulo {
+        font-size: 1.5rem;
+    }
+
+    .galeria_controles {
+        gap: 0.75rem;
+        margin-top: 1.5rem;
     }
 
     .contenido {
@@ -530,7 +796,7 @@ CONTENIDO PRINCIPAL Y JERARQUIA
     }
 }
 
-/* media */
+/* Escritorio: desde 1024px */
 @media (min-width: 1024px) {
     .contenedor_clientes {
         grid-template-columns: 1fr 1fr 1fr;
@@ -549,11 +815,7 @@ CONTENIDO PRINCIPAL Y JERARQUIA
     }
 }
 
-/*
-ACCESIBILIDAD: MOVIMIENTO REDUCIDO
-Si la persona configuró su sistema para reducir animaciones,
-las transiciones pasan a ser instantáneas.
-*/
+/* ACCESIBILIDAD: MOVIMIENTO REDUCIDO */
 @media (prefers-reduced-motion: reduce) {
 
     *,
