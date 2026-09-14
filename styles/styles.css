@@ -382,6 +382,43 @@ CONTENIDO PRINCIPAL Y JERARQUIA
     font-size: 1.1rem;
 }
 
+/* TARJETAS DE BOOTSTRAP */
+
+.tarjeta_card {
+    --bs-card-bg: #F0EDE2;
+    --bs-card-color: #416788;
+    --bs-card-border-color: transparent;
+    --bs-card-border-radius: 0.5rem;
+    --bs-card-spacer-x: 1.5rem;
+    --bs-card-spacer-y: 1.5rem;
+    border-bottom: 0.25rem solid #FFDAB9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta_card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1.25rem rgba(65, 103, 136, 0.15);
+}
+
+.tarjeta_card:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.tarjeta_card .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tarjeta_card .card-body> :first-child {
+    margin-top: 0;
+}
+
+.tarjeta_card .card-body> :last-child {
+    margin-bottom: 0;
+}
+
 /* PROYECTOS */
 
 .proyecto {
