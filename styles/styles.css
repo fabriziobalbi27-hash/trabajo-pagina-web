@@ -345,6 +345,11 @@ CONTENIDO PRINCIPAL Y JERARQUIA
     box-shadow: 0 0.5rem 1.25rem rgba(65, 103, 136, 0.15);
 }
 
+.tarjeta:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
 .tarjeta_titulo {
     color: #416788;
     font-size: 1.25rem;
