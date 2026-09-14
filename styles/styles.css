@@ -188,13 +188,9 @@ CONTENIDO PRINCIPAL Y JERARQUIA
 }
 
 .texto_capitular::first-letter {
-    float: left;
-    margin-right: 0.75rem;
-    padding-top: 0.4rem;
     color: #416788;
-    font-size: 3.5rem;
+    font-size: 1.25rem;
     font-weight: 800;
-    line-height: 0.8;
 }
 
 .titulo_principal {
