@@ -80,6 +80,16 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .encabezado {
   background-color: #416788;
   padding: 1.25rem 2.5rem;
@@ -208,8 +218,12 @@ button:focus-visible {
   border-left: 0.5rem solid #FFDAB9;
   padding: 3rem;
 }
+.seccion_principal .titulo_principal {
+  animation: aparecer 0.7s ease 0s both;
+}
 .seccion_principal .texto {
   max-width: 55rem;
+  animation: aparecer 0.7s ease 0.2s both;
 }
 .seccion_principal .texto::first-line {
   font-weight: 600;
@@ -360,20 +374,17 @@ button:focus-visible {
   opacity: 0.7;
 }
 
-.boton_principal,
-.boton_secundario {
+.boton_secundario, .boton_principal {
   padding: 0.75rem 1.5rem;
   border: 2px solid #416788;
   border-radius: 0.5rem;
   font-weight: 700;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
-.boton_principal:focus-visible,
-.boton_secundario:focus-visible {
+.boton_secundario:focus-visible, .boton_principal:focus-visible {
   box-shadow: none;
 }
-.boton_principal:active,
-.boton_secundario:active {
+.boton_secundario:active, .boton_principal:active {
   transform: scale(0.96);
 }
 
@@ -396,6 +407,19 @@ button:focus-visible {
   color: #F0EDE2;
 }
 
+.tarjeta_card, .tarjeta {
+  border-bottom: 0.25rem solid #FFDAB9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tarjeta_card:hover, .tarjeta:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1.25rem rgba(65, 103, 136, 0.15);
+}
+.tarjeta_card:active, .tarjeta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
 .tarjeta {
   background-color: #F0EDE2;
   flex: 1 1 15rem;
@@ -404,17 +428,7 @@ button:focus-visible {
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.5rem;
-  border-bottom: 0.25rem solid #FFDAB9;
   border-radius: 0.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.tarjeta:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: 0 0.5rem 1.25rem rgba(65, 103, 136, 0.15);
-}
-.tarjeta:active {
-  transform: translateY(0);
-  box-shadow: none;
 }
 @media (max-width: 767px) {
   .tarjeta {
@@ -448,16 +462,6 @@ button:focus-visible {
   --bs-card-border-radius: 0.5rem;
   --bs-card-spacer-x: 1.5rem;
   --bs-card-spacer-y: 1.5rem;
-  border-bottom: 0.25rem solid #FFDAB9;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.tarjeta_card:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: 0 0.5rem 1.25rem rgba(65, 103, 136, 0.15);
-}
-.tarjeta_card:active {
-  transform: translateY(0);
-  box-shadow: none;
 }
 .tarjeta_card .card-body {
   display: flex;
