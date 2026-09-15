@@ -13,6 +13,7 @@ Publicado con GitHub Pages desde la rama `main`.
 ## Tecnologías
 
 - HTML5 semántico
+- SCSS con arquitectura de partials (variables, mixins y nesting)
 - CSS3 (Flexbox, Grid, media queries, variables de Bootstrap personalizadas)
 - Bootstrap 5.3.8 vía CDN (CSS y JavaScript)
 - Tipografía Inter (Google Fonts)
@@ -47,6 +48,45 @@ del proyecto, sobrescribiendo las variables `--bs-*` donde hizo falta.
 | Secundario | `#F0EDE2` |
 | Acento | `#FFDAB9` |
 
+## Estilos
+
+Los estilos se escriben en SCSS dentro de `scss/`. El único punto de entrada es
+`main.scss`, que solo contiene directivas `@use` hacia los partials:
+
+```
+scss/
+├── main.scss
+├── utilities/
+│   ├── _variables.scss   paleta, tipografía, bordes, sombras y breakpoints
+│   └── _mixins.scss      media queries y elevación de las tarjetas
+├── base/
+│   ├── _tipografia.scss  fuente y jerarquía de títulos
+│   └── _base.scss        reset, body y accesibilidad
+├── layout/
+│   ├── _header.scss
+│   ├── _nav.scss
+│   ├── _contenido.scss   grillas y secciones
+│   └── _footer.scss
+└── components/
+    ├── _buttons.scss
+    ├── _cards.scss
+    ├── _imagenes.scss
+    ├── _listas.scss
+    ├── _proyecto.scss
+    ├── _galeria.scss
+    ├── _modal.scss
+    └── _accordion.scss
+```
+
+Para compilar hace falta instalar las dependencias una vez con `npm install`:
+
+```
+npm run sass     compila scss/main.scss a styles/styles.css
+npm run watch    recompila al guardar
+```
+
+`styles/styles.css` es el resultado de la compilación y no se edita a mano.
+
 ## Estructura del proyecto
 
 ```
@@ -57,6 +97,7 @@ trabajo-pagina-web/
 │   ├── proyectos.html
 │   ├── sobre-mi.html
 │   └── contacto.html
+├── scss/
 ├── styles/
 │   └── styles.css
 ├── img/
