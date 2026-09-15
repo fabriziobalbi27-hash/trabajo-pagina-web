@@ -16,6 +16,7 @@ Publicado con GitHub Pages desde la rama `main`.
 - SCSS con arquitectura de partials (variables, mixins y nesting)
 - CSS3 (Flexbox, Grid, media queries, variables de Bootstrap personalizadas)
 - Bootstrap 5.3.8 vía CDN (CSS y JavaScript)
+- AOS 2.3.1 vía CDN para las animaciones al hacer scroll
 - Tipografía Inter (Google Fonts)
 
 ## Páginas
@@ -61,7 +62,8 @@ scss/
 │   └── _mixins.scss      media queries y elevación de las tarjetas
 ├── base/
 │   ├── _tipografia.scss  fuente y jerarquía de títulos
-│   └── _base.scss        reset, body y accesibilidad
+│   ├── _base.scss        reset, body y accesibilidad
+│   └── _animaciones.scss keyframes de entrada
 ├── layout/
 │   ├── _header.scss
 │   ├── _nav.scss
@@ -86,6 +88,14 @@ npm run watch    recompila al guardar
 ```
 
 `styles/styles.css` es el resultado de la compilación y no se edita a mano.
+
+## Animaciones
+
+La portada de cada página entra con un `@keyframes` propio, aplicado con un mixin
+que recibe la duración y el retraso para escalonar el título y el texto. El resto
+de las secciones aparecen al hacer scroll con AOS (`data-aos="fade-up"`). Los
+estados de hover y focus usan `transition`. Todo queda anulado si el sistema pide
+menos movimiento (`prefers-reduced-motion`).
 
 ## Estructura del proyecto
 
