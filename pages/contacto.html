@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FindAGem | Contacto</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link rel="stylesheet" href="../styles/styles.css" />
 </head>
 
@@ -58,7 +59,7 @@
       </figure>
     </section>
 
-    <section class="seccion">
+    <section class="seccion" data-aos="fade-up">
       <h2 class="titulo_secundario">Información útil para tu consulta</h2>
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
@@ -97,7 +98,7 @@
       </div>
     </section>
 
-    <section class="seccion">
+    <section class="seccion" data-aos="fade-up">
       <h2 class="titulo_secundario">Canales de atención</h2>
       <p class="texto">Correo: consultas@findagem.com</p>
       <p class="texto">Horario: lunes a viernes, de 9 a 18 h.</p>
@@ -130,6 +131,13 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true
+    });
+  </script>
 </body>
 
 </html>
