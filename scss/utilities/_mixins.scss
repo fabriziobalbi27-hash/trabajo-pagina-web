@@ -1,0 +1,25 @@
+@use "variables" as *;
+
+@mixin hasta($ancho) {
+    @media (max-width: $ancho) {
+        @content;
+    }
+}
+
+@mixin desde($ancho) {
+    @media (min-width: $ancho) {
+        @content;
+    }
+}
+
+@mixin entre($minimo, $maximo) {
+    @media (min-width: $minimo) and (max-width: $maximo) {
+        @content;
+    }
+}
+
+// Levantada de las tarjetas al pasar el mouse
+@mixin elevacion {
+    transform: translateY(-0.25rem);
+    box-shadow: $sombra-tarjeta;
+}

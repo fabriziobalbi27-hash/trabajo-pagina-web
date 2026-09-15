@@ -1,0 +1,24 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.encabezado {
+    background-color: $color-primario;
+    padding: 1.25rem 2.5rem;
+
+    a:focus-visible {
+        outline: 2px solid $color-acento;
+    }
+
+    @include hasta($bp-movil-max) {
+        padding: 1.25rem;
+    }
+}
+
+.logo {
+    color: $color-secundario;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    align-self: center;
+    transition: opacity 0.1s ease;
+}

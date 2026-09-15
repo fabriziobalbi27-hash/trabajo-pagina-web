@@ -1,0 +1,81 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.pie_pagina {
+    background-color: $color-primario;
+    color: $color-secundario;
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    a:focus-visible {
+        outline: 2px solid $color-acento;
+    }
+
+    @include hasta($bp-movil-max) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+}
+
+.pie_grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1 1 16rem;
+
+    h2 {
+        font-size: 1.15rem;
+        color: $color-acento;
+    }
+
+    @include hasta($bp-movil-max) {
+        width: 100%;
+    }
+}
+
+.pie_legal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex-basis: 100%;
+    font-size: 0.9rem;
+}
+
+.pie_lista {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    li:not(:last-child)::after {
+        content: "·";
+        margin-left: 1rem;
+        color: $color-acento;
+        font-weight: 700;
+    }
+
+    @include hasta($bp-movil-max) {
+        gap: 0.5rem 1rem;
+    }
+}
+
+.pie_enlace {
+    color: $color-secundario;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease, opacity 0.1s ease;
+
+    &:hover {
+        color: $color-acento;
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+}

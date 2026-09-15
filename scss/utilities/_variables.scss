@@ -1,0 +1,28 @@
+// Paleta
+$color-primario: #416788;
+$color-primario-oscuro: #2F4D66;
+$color-secundario: #F0EDE2;
+$color-acento: #FFDAB9;
+$color-blanco: #ffffff;
+
+// Tipografia
+$fuente-base: 'Inter', sans-serif;
+
+// Bordes
+$radio-chico: 0.5rem;
+$radio-grande: 0.75rem;
+$radio-pildora: 2rem;
+$borde-suave: rgba($color-primario, 0.2);
+
+// Sombras
+$sombra-seccion: 0 0.5rem 1.5rem rgba($color-primario, 0.08);
+$sombra-item: 0 0.25rem 0.75rem rgba($color-primario, 0.12);
+$sombra-tarjeta: 0 0.5rem 1.25rem rgba($color-primario, 0.15);
+$sombra-galeria: 0 0.75rem 1.5rem rgba($color-primario, 0.2);
+
+// Breakpoints
+$bp-movil-max: 767px;
+$bp-tablet: 768px;
+$bp-tablet-max: 1023px;
+$bp-notebook: 992px;
+$bp-escritorio: 1024px;

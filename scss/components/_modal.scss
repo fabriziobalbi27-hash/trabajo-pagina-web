@@ -1,0 +1,22 @@
+@use "../utilities/variables" as *;
+
+.modal_servicios {
+
+    .modal-content {
+        border: 0;
+        border-radius: $radio-grande;
+        background-color: $color-secundario;
+    }
+
+    .modal-header,
+    .modal-footer {
+        border-color: $borde-suave;
+    }
+
+    .modal-title {
+        margin: 0;
+        color: $color-primario;
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+}

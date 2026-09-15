@@ -1,0 +1,19 @@
+@use "utilities/variables" as *;
+@use "utilities/mixins" as *;
+
+@use "base/tipografia";
+@use "base/base";
+
+@use "layout/header";
+@use "layout/nav";
+@use "layout/contenido";
+@use "layout/footer";
+
+@use "components/buttons";
+@use "components/cards";
+@use "components/imagenes";
+@use "components/listas";
+@use "components/proyecto";
+@use "components/galeria";
+@use "components/modal";
+@use "components/accordion";

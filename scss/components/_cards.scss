@@ -1,0 +1,82 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.tarjeta {
+    background-color: $color-secundario;
+    flex: 1 1 15rem;
+    min-width: 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border-bottom: 0.25rem solid $color-acento;
+    border-radius: $radio-chico;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        @include elevacion;
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    @include hasta($bp-movil-max) {
+        min-width: 0;
+        flex-basis: 100%;
+        padding: 1.25rem;
+    }
+}
+
+.tarjeta_titulo {
+    color: $color-primario;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.tarjeta_texto {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.tarjeta_precio {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 1.1rem;
+}
+
+// Tarjetas de Bootstrap
+.tarjeta_card {
+    --bs-card-bg: #{$color-secundario};
+    --bs-card-color: #{$color-primario};
+    --bs-card-border-color: transparent;
+    --bs-card-border-radius: #{$radio-chico};
+    --bs-card-spacer-x: 1.5rem;
+    --bs-card-spacer-y: 1.5rem;
+    border-bottom: 0.25rem solid $color-acento;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        @include elevacion;
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+}

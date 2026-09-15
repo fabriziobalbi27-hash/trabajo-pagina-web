@@ -1,0 +1,31 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.proyecto {
+    background-color: $color-secundario;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "imagen"
+        "info";
+    padding: 1.5rem;
+    border-radius: $radio-grande;
+
+    @include desde($bp-escritorio) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "imagen info";
+    }
+}
+
+.proyecto_imagen {
+    grid-area: imagen;
+}
+
+.proyecto_informacion {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}

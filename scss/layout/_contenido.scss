@@ -1,0 +1,129 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.contenido {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    flex-grow: 1;
+
+    @include hasta($bp-movil-max) {
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+}
+
+.seccion {
+    background-color: $color-blanco;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-radius: $radio-grande;
+    box-shadow: $sombra-seccion;
+
+    @include hasta($bp-movil-max) {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+}
+
+.seccion_principal {
+    min-height: 18rem;
+    justify-content: center;
+    align-items: flex-start;
+    border-left: 0.5rem solid $color-acento;
+    padding: 3rem;
+
+    .texto {
+        max-width: 55rem;
+
+        &::first-line {
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+    }
+
+    @include hasta($bp-movil-max) {
+        padding: 1.5rem;
+    }
+}
+
+.contenedor_tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+// GRIDs
+.contenedor_clientes {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "cliente-uno"
+        "cliente-dos"
+        "cliente-tres";
+
+    .tarjeta:nth-child(1) {
+        grid-area: cliente-uno;
+    }
+
+    .tarjeta:nth-child(2) {
+        grid-area: cliente-dos;
+    }
+
+    .tarjeta:nth-child(3) {
+        grid-area: cliente-tres;
+    }
+
+    @include entre($bp-tablet, $bp-tablet-max) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "cliente-uno cliente-dos"
+            "cliente-tres cliente-tres";
+    }
+
+    @include desde($bp-escritorio) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "cliente-uno cliente-dos cliente-tres";
+    }
+}
+
+.contenedor_extra {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "etapa-uno"
+        "etapa-dos"
+        "etapa-tres";
+
+    .tarjeta:nth-child(1) {
+        grid-area: etapa-uno;
+    }
+
+    .tarjeta:nth-child(2) {
+        grid-area: etapa-dos;
+    }
+
+    .tarjeta:nth-child(3) {
+        grid-area: etapa-tres;
+    }
+
+    @include entre($bp-tablet, $bp-tablet-max) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "etapa-uno etapa-dos"
+            "etapa-tres etapa-tres";
+    }
+
+    @include desde($bp-escritorio) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "etapa-uno etapa-dos etapa-tres";
+    }
+}

@@ -1,0 +1,165 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.galeria_carousel {
+    background-color: $color-secundario;
+    border-radius: $radio-grande;
+    padding: 2.5rem;
+
+    .texto {
+        max-width: 32rem;
+        margin-bottom: 0;
+    }
+
+    @include hasta($bp-movil-max) {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+.galeria_imagen {
+    display: block;
+    max-width: 20rem;
+    margin-inline: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    box-shadow: $sombra-galeria;
+
+    @include hasta($bp-movil-max) {
+        max-width: 16rem;
+    }
+}
+
+.galeria_etiqueta {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.875rem;
+    border-radius: $radio-pildora;
+    background-color: $color-acento;
+    color: $color-primario;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.galeria_titulo {
+    margin-bottom: 1rem;
+    color: $color-primario;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+
+    @include hasta($bp-movil-max) {
+        font-size: 1.5rem;
+    }
+}
+
+.galeria_controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: static;
+        flex-shrink: 0;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        background-color: $color-primario;
+        opacity: 1;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+
+        &:hover {
+            background-color: $color-primario-oscuro;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-primario;
+            outline-offset: 3px;
+        }
+
+        &:active {
+            transform: scale(0.92);
+        }
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 1.1rem;
+        height: 1.1rem;
+    }
+
+    .carousel-indicators {
+        position: static;
+        margin: 0;
+
+        [data-bs-target] {
+            position: relative;
+            width: 1.5rem;
+            height: 2.75rem;
+            margin-inline: 0.125rem;
+            padding: 0;
+            border: 0;
+            background-color: transparent;
+            opacity: 1;
+            transition: transform 0.1s ease;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 1rem;
+                height: 0.2rem;
+                border-radius: 1rem;
+                background-color: $color-primario;
+                opacity: 0.3;
+                transform: translate(-50%, -50%);
+                transition: width 0.3s ease, opacity 0.3s ease;
+            }
+
+            &:hover::before,
+            &:focus-visible::before {
+                opacity: 0.6;
+            }
+
+            &:active {
+                transform: scale(0.92);
+            }
+        }
+
+        .active::before {
+            width: 1.5rem;
+            opacity: 1;
+        }
+    }
+
+    @include hasta($bp-movil-max) {
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    @include desde($bp-tablet) {
+        justify-content: flex-start;
+    }
+
+    @include desde($bp-notebook) {
+        margin-top: 0;
+    }
+}
+
+@include desde($bp-notebook) {
+    .galeria_controles_fila {
+        position: absolute;
+        right: 2.5rem;
+        bottom: 2.5rem;
+        left: 2.5rem;
+    }
+
+    .galeria_texto {
+        padding-bottom: 4rem;
+    }
+}

@@ -1,0 +1,85 @@
+@use "../utilities/variables" as *;
+
+.encabezado {
+
+    .navbar {
+        --bs-navbar-padding-y: 0;
+        --bs-navbar-color: #{$color-secundario};
+        --bs-navbar-hover-color: #{$color-acento};
+        --bs-navbar-active-color: #{$color-acento};
+        --bs-navbar-brand-color: #{$color-secundario};
+        --bs-navbar-brand-hover-color: #{$color-secundario};
+        --bs-navbar-nav-link-padding-x: 0;
+        --bs-navbar-toggler-border-color: #{rgba($color-secundario, 0.5)};
+        --bs-navbar-toggler-border-radius: #{$radio-chico};
+        --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F0EDE2' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .container-fluid {
+        padding-inline: 0;
+    }
+
+    .navbar-nav {
+        column-gap: 1.5rem;
+    }
+
+    .nav-link {
+        position: relative;
+        display: inline-block;
+        font-weight: 600;
+        padding: 0.5rem 0;
+        transition: color 0.2s ease, opacity 0.1s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0.35rem;
+            height: 0.125rem;
+            border-radius: 1rem;
+            background-color: $color-acento;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+
+        &:hover::after,
+        &:focus-visible::after,
+        &.active::after {
+            transform: scaleX(1);
+        }
+
+        &:focus-visible {
+            box-shadow: none;
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+
+    .navbar-brand:active {
+        opacity: 0.7;
+    }
+
+    .navbar-toggler {
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+
+        &:hover {
+            border-color: $color-acento;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &:focus-visible {
+            box-shadow: 0 0 0 0.2rem rgba($color-acento, 0.5);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}

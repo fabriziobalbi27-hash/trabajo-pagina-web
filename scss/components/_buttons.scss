@@ -1,0 +1,39 @@
+@use "../utilities/variables" as *;
+
+.boton_principal,
+.boton_secundario {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid $color-primario;
+    border-radius: $radio-chico;
+    font-weight: 700;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+
+    &:focus-visible {
+        box-shadow: none;
+    }
+
+    &:active {
+        transform: scale(0.96);
+    }
+}
+
+.boton_principal {
+    background-color: $color-primario;
+    color: $color-secundario;
+
+    &:hover {
+        background-color: $color-primario-oscuro;
+        border-color: $color-primario-oscuro;
+        color: $color-secundario;
+    }
+}
+
+.boton_secundario {
+    background-color: transparent;
+    color: $color-primario;
+
+    &:hover {
+        background-color: $color-primario;
+        color: $color-secundario;
+    }
+}

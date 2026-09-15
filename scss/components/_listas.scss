@@ -1,0 +1,41 @@
+@use "../utilities/variables" as *;
+
+.lista_servicios {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 1.5rem;
+}
+
+.lista_servicios_item {
+    background-color: $color-secundario;
+    flex: 1 1 12rem;
+    min-width: 12rem;
+    padding: 1.25rem;
+    border-left: 0.25rem solid $color-acento;
+    border-radius: $radio-chico;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateX(0.25rem);
+        box-shadow: $sombra-item;
+    }
+}
+
+.lista_pasos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0;
+    padding-left: 1.25rem;
+
+    li::marker {
+        color: $color-primario;
+        font-weight: 700;
+    }
+}

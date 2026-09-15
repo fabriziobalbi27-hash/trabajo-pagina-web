@@ -1,0 +1,45 @@
+@use "../utilities/variables" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: $fuente-base;
+    background-color: $color-secundario;
+    color: $color-primario;
+    line-height: 1.6;
+}
+
+.span {
+    color: $color-acento;
+}
+
+::selection {
+    background-color: $color-acento;
+    color: $color-primario;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid $color-primario;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+// Accesibilidad: movimiento reducido
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
