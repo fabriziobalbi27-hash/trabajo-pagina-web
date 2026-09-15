@@ -71,15 +71,6 @@ button:focus-visible {
   border-radius: 2px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-}
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -608,7 +599,7 @@ button:focus-visible {
 .galeria_imagen {
   display: block;
   max-width: 20rem;
-  margin-inline: auto;
+  margin: 0 auto;
   aspect-ratio: 2/3;
   object-fit: cover;
   box-shadow: 0 0.75rem 1.5rem rgba(65, 103, 136, 0.2);
@@ -689,7 +680,7 @@ button:focus-visible {
   position: relative;
   width: 1.5rem;
   height: 2.75rem;
-  margin-inline: 0.125rem;
+  margin: 0 0.125rem;
   padding: 0;
   border: 0;
   background-color: transparent;
