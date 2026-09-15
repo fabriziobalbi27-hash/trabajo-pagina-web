@@ -1,0 +1,25 @@
+{
+  "name": "trabajo-pagina-web",
+  "version": "1.0.0",
+  "description": "Sitio web de un taller dedicado a la restauración de guitarras y a la venta de piezas vintage para instrumentos con historia. El proyecto es un portafolio de cinco páginas maquetado con HTML5, CSS3 y Bootstrap 5, adaptado a mobile y desktop.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass scss/main.scss styles/styles.css --no-source-map",
+    "watch": "sass --watch scss/main.scss styles/styles.css --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabriziobalbi27-hash/trabajo-pagina-web.git"
+  },
+  "keywords": [],
+  "author": "Fabrizio Balbi",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fabriziobalbi27-hash/trabajo-pagina-web/issues"
+  },
+  "homepage": "https://github.com/fabriziobalbi27-hash/trabajo-pagina-web#readme",
+  "devDependencies": {
+    "sass": "^1.104.1"
+  }
+}
