@@ -19,7 +19,7 @@
 .galeria_imagen {
     display: block;
     max-width: 20rem;
-    margin-inline: auto;
+    margin: 0 auto;
     aspect-ratio: 2 / 3;
     object-fit: cover;
     box-shadow: $sombra-galeria;
@@ -100,7 +100,7 @@
             position: relative;
             width: 1.5rem;
             height: 2.75rem;
-            margin-inline: 0.125rem;
+            margin: 0 0.125rem;
             padding: 0;
             border: 0;
             background-color: transparent;

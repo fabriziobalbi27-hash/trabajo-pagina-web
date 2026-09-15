@@ -94,8 +94,7 @@ npm run watch    recompila al guardar
 La portada de cada página entra con un `@keyframes` propio, aplicado con un mixin
 que recibe la duración y el retraso para escalonar el título y el texto. El resto
 de las secciones aparecen al hacer scroll con AOS (`data-aos="fade-up"`). Los
-estados de hover y focus usan `transition`. Todo queda anulado si el sistema pide
-menos movimiento (`prefers-reduced-motion`).
+estados de hover y focus usan `transition`.
 
 ## Estructura del proyecto
 
