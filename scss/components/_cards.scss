@@ -1,16 +1,8 @@
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-.tarjeta {
-    background-color: $color-secundario;
-    flex: 1 1 15rem;
-    min-width: 15rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1.5rem;
+%tarjeta_base {
     border-bottom: 0.25rem solid $color-acento;
-    border-radius: $radio-chico;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
@@ -21,6 +13,18 @@
         transform: translateY(0);
         box-shadow: none;
     }
+}
+
+.tarjeta {
+    @extend %tarjeta_base;
+    background-color: $color-secundario;
+    flex: 1 1 15rem;
+    min-width: 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border-radius: $radio-chico;
 
     @include hasta($bp-movil-max) {
         min-width: 0;
@@ -48,23 +52,13 @@
 
 // Tarjetas de Bootstrap
 .tarjeta_card {
+    @extend %tarjeta_base;
     --bs-card-bg: #{$color-secundario};
     --bs-card-color: #{$color-primario};
     --bs-card-border-color: transparent;
     --bs-card-border-radius: #{$radio-chico};
     --bs-card-spacer-x: 1.5rem;
     --bs-card-spacer-y: 1.5rem;
-    border-bottom: 0.25rem solid $color-acento;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-        @include elevacion;
-    }
-
-    &:active {
-        transform: translateY(0);
-        box-shadow: none;
-    }
 
     .card-body {
         display: flex;

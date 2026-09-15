@@ -1,7 +1,6 @@
 @use "../utilities/variables" as *;
 
-.boton_principal,
-.boton_secundario {
+%boton_base {
     padding: 0.75rem 1.5rem;
     border: 2px solid $color-primario;
     border-radius: $radio-chico;
@@ -18,6 +17,7 @@
 }
 
 .boton_principal {
+    @extend %boton_base;
     background-color: $color-primario;
     color: $color-secundario;
 
@@ -29,6 +29,7 @@
 }
 
 .boton_secundario {
+    @extend %boton_base;
     background-color: transparent;
     color: $color-primario;
 
