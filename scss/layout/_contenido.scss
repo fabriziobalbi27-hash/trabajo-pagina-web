@@ -39,8 +39,13 @@
     border-left: 0.5rem solid $color-acento;
     padding: 3rem;
 
+    .titulo_principal {
+        @include aparecer(0.7s);
+    }
+
     .texto {
         max-width: 55rem;
+        @include aparecer(0.7s, 0.2s);
 
         &::first-line {
             font-weight: 600;

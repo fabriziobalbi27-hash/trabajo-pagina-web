@@ -18,8 +18,12 @@
     }
 }
 
-// Levantada de las tarjetas al pasar el mouse
+// tarjetas cursor
 @mixin elevacion {
     transform: translateY(-0.25rem);
     box-shadow: $sombra-tarjeta;
+}
+
+@mixin aparecer($duracion, $retraso: 0s) {
+    animation: aparecer $duracion ease $retraso both;
 }
